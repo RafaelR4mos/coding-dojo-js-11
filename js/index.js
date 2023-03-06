@@ -9,7 +9,6 @@ function addTask() {
         hour = prompt("Digite a hora escolhida! (hh:mm)");
     }
     const message = prompt("Digite sua mensagem: ");
-    // document.getElementById("hidden").style.display = "none";
 
     const newTask = {
         month: `${date.getFullYear()}${date.getMonth()}`,
@@ -20,25 +19,40 @@ function addTask() {
     taskData.push(newTask);
 
     createLi(
-        taskData.sort((a, b) => {
-            const aHour = a.hour;
-            const bHour = b.hour;
+        taskData
+            .sort((a, b) => {
+                const aHour = a.hour;
+                const bHour = b.hour;
 
-            const formatedA = aHour.replace(":", "").trim();
-            const formatedB = bHour.replace(":", "").trim();
+                const formatedA = aHour.replace(":", "").trim();
+                const formatedB = bHour.replace(":", "").trim();
 
-            return formatedB - formatedA;
-        })
+                return formatedB - formatedA;
+            })
+            .filter((task) => {
+                const currentDate = `${date.getFullYear()}${date.getMonth()}`;
+                console.log(task.month);
+                console.log(currentDate);
+                return task.month == currentDate;
+            })
     );
 }
 
 function createLi(results) {
     let i = 0;
     console.log(results);
-    clearList();
-    if (taskData.length === 0) {
-        console.log(`nenhum`);
+
+    if (results.length === 0) {
+        clearList();
+        const hiddenElement = document.createElement("li");
+        hiddenElement.innerHTML = `<li id="hidden" class="reminder-item">
+        <div>Nenhum lembrete cadastrado ainda</div>
+    </li>`;
+
+        reminderList.appendChild(hiddenElement);
+        document.getElementById("hidden").style.display = "flex";
     } else {
+        clearList();
         for (const task of results) {
             const createItem = document.createElement("li");
             createItem.classList.add("reminder-item");
@@ -69,42 +83,6 @@ function updateDate() {
         "pt-BR",
         { month: "short", year: "numeric" }
     );
-
-    if (taskData.length > 0) {
-        createLi(
-            taskData
-                .sort((a, b) => {
-                    const aHour = a.hour;
-                    const bHour = b.hour;
-
-                    const formatedA = aHour.replace(":", "").trim();
-                    const formatedB = bHour.replace(":", "").trim();
-
-                    return formatedB - formatedA;
-                })
-                .filter((task) => {
-                    console.log(task);
-                    console.log(`${date.getFullYear} ${date.getMonth()}`);
-                })
-        );
-    }
-
-    // document.getElementById("hidden").style.display = "block";
-
-    // tasksUl = document.querySelectorAll("#reminder-list li");
-    // for (let t = 0; t < tasksUl.length; t++) {
-    //     if (
-    //         tasksUl[t].classList.contains(
-    //             `date-${date.getFullYear()}${date.getMonth()}`
-    //         )
-    //     ) {
-    //         console.log(`apagou`);
-    //         document.getElementById("hidden").style.display = "none";
-    //         tasksUl[t].style.display = "flex";
-    //     } else {
-    //         tasksUl[t].style.display = "none";
-    //     }
-    // }
 }
 
 updateDate();
@@ -112,18 +90,45 @@ updateDate();
 function addMonthInDate() {
     date.setMonth(date.getMonth() + 1);
     updateDate();
+    createLi(
+        taskData
+            .sort((a, b) => {
+                const aHour = a.hour;
+                const bHour = b.hour;
+
+                const formatedA = aHour.replace(":", "").trim();
+                const formatedB = bHour.replace(":", "").trim();
+
+                return formatedB - formatedA;
+            })
+            .filter((task) => {
+                const currentDate = `${date.getFullYear()}${date.getMonth()}`;
+                console.log(task.month);
+                console.log(currentDate);
+                return task.month == currentDate;
+            })
+    );
 }
 
 function minusMonthInDate() {
     date.setMonth(date.getMonth() - 1);
     updateDate();
+    createLi(
+        taskData
+            .sort((a, b) => {
+                const aHour = a.hour;
+                const bHour = b.hour;
+
+                const formatedA = aHour.replace(":", "").trim();
+                const formatedB = bHour.replace(":", "").trim();
+
+                return formatedB - formatedA;
+            })
+            .filter((task) => {
+                const currentDate = `${date.getFullYear()}${date.getMonth()}`;
+                console.log(task.month);
+                console.log(currentDate);
+                return task.month == currentDate;
+            })
+    );
 }
-
-// function ordenaPorHora() {
-//     const taskList = document.querySelectorAll("#reminder-list li");
-
-//     for (let i = 0; i < taskList.length; i++) {
-//         console.log(tasksUl[0].classList);
-//     }
-//     console.log(taskList);
-// }
