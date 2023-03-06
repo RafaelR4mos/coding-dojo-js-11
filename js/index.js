@@ -10,6 +10,8 @@ function addTask() {
 	}
 	const message = prompt('Digite sua mensagem: ');
 	document.getElementById('hidden').style.display = 'none'
+	console.log(reminderList.childNodes);
+	console.log(typeof(reminderList.childNodes));
 	reminderList.appendChild(createLi(hour, message));
 }
 function createLi(hour, message) {
