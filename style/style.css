@@ -1,117 +1,118 @@
 :root {
-	--blue: #3f72af;
-	--white: #ffffff;
-	--black: #000000;
-	--date-info-color: #dbe2ef;
+    --blue: #3f72af;
+    --white: #ffffff;
+    --black: #000000;
+    --date-info-color: #dbe2ef;
 }
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	list-style: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
 }
 
 html {
-	font-size: 62.5%;
-	-webkit-font-smoothing: antialiased;
+    font-size: 62.5%;
+    -webkit-font-smoothing: antialiased;
 }
 
 body {
-	background: var(--blue);
-	font-family: 'Poppins', sans-serif;
+    background: var(--blue);
+    font-family: "Poppins", sans-serif;
 }
 
 h1 {
-	font-size: 4.8rem;
-	color: var(--blue);
-	margin: auto;
+    font-size: 4.8rem;
+    color: var(--blue);
+    margin: auto;
 }
 
 .container-main {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .container-rediments {
-	width: 600px;
-	padding: 4rem;
-	background: var(--white);
-	border-radius: 0.5rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+    width: 600px;
+    padding: 4rem;
+    background: var(--white);
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-	margin: 10rem auto 0 auto;
+    margin: 10rem auto 2.4rem auto;
 }
 
 .input-container {
-	display: flex;
-	gap: 1.2rem;
+    display: flex;
+    gap: 1.2rem;
 }
 
 .data-picker {
-	display: flex;
-	align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .data-picker button img {
-	width: 24px;
-	height: 24px;
+    width: 24px;
+    height: 24px;
 
-	filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg)
-		brightness(102%) contrast(102%);
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg)
+        brightness(102%) contrast(102%);
 }
 
 .arrow-rotated {
-	transform: rotate(-180deg);
+    transform: rotate(-180deg);
 }
 
 .date-info {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 100%;
-	height: 100%;
-	padding: 0 3.2rem;
-	background-color: var(--date-info-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 3.2rem;
+    background-color: var(--date-info-color);
 }
 
 .data-picker button {
-	width: 3.5rem;
-	border-radius: 0px 5px 5px 0px;
+    width: 3.5rem;
+    border-radius: 0px 5px 5px 0px;
 }
 
 .data-picker button:nth-child(1) {
-	border-radius: 5px 0px 0px 5px;
+    border-radius: 5px 0px 0px 5px;
+}
+
+.container-data ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
 }
 
 .reminder-item {
-	margin-top: 2.4rem;
-	width: 600px;
-	border-radius: 0.5rem;
-	display: flex;
-	justify-content: space-between;
-	padding: 2rem 4.5rem;
-	font-size: 1.6rem;
-	color: var(--black);
-	background-color: var(--white);
+    width: 600px;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 4.5rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    background-color: var(--white);
 }
-
-
-
 
 button {
-	padding: 1.2rem 2.5rem;
-	border: none;
-	border-radius: 0.5rem;
-	background-color: var(--blue);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	color: var(--white);
-	cursor: pointer;
+    padding: 1.2rem 2.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white);
+    cursor: pointer;
 }
-

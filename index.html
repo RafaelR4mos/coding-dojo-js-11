@@ -1,54 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="./style/style.css" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap"
-			rel="stylesheet"
-		/>
-		<title>Reminder</title>
-	</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./style/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap"
+            rel="stylesheet"
+        />
+        <title>Reminder</title>
+    </head>
 
-	<body>
-		<section class="container-main">
-			<div class="container-rediments">
-				<h1>Reminders App</h1>
-				<div class="input-container">
-					<div class="data-picker">
-						<button onclick="minusMonthInDate()">
-							<img
-								class="arrow-rotated"
-								src="./assets/left-arrow.svg"
-								alt="seta apontando para esquerda"							
-							/>							
-						</button>
-						<p id="display-date" class="date-info"></p>
-						<button onclick="addMonthInDate()">
-							<img
-								src="./assets/right-arrow.svg"
-								alt="seta apontando para direita"
-							/>
-						</button>
-					</div>
-					<button class="add-reminder" onclick="addTask()">
-						+ adicionar lembrete
-					</button>
-				</div>
-			</div>
+    <body>
+        <section class="container-main">
+            <div class="container-rediments">
+                <h1>Reminders App</h1>
+                <div class="input-container">
+                    <div class="data-picker">
+                        <button onclick="minusMonthInDate()">
+                            <img
+                                class="arrow-rotated"
+                                src="./assets/left-arrow.svg"
+                                alt="seta apontando para esquerda"
+                            />
+                        </button>
+                        <p id="display-date" class="date-info"></p>
+                        <button onclick="addMonthInDate()">
+                            <img
+                                src="./assets/right-arrow.svg"
+                                alt="seta apontando para direita"
+                            />
+                        </button>
+                    </div>
+                    <button class="add-reminder" onclick="addTask()">
+                        + adicionar lembrete
+                    </button>
+                </div>
+            </div>
 
-			<div class="container-data">
-				<ul id="reminder-list">
-					<li id="hidden" class="reminder-item">
-						<div>Nenhum lembrete cadastrado ainda</div>
-					</li>
-				</ul>
-			</div>
-		</section>
-		<script src="./js/index.js"></script>
-	</body>
+            <div class="container-data">
+                <ul id="reminder-list">
+                    <li id="hidden" class="reminder-item">
+                        <div>Nenhum lembrete cadastrado ainda</div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <script src="./js/index.js"></script>
+    </body>
 </html>
